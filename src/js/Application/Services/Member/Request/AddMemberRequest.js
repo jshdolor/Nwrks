@@ -1,6 +1,9 @@
-export default class Member {
+import ToFormData from '../../../../Infrastructure/FormData';
 
+export default class AddMemberRequest extends ToFormData{
+    
     constructor(data = {}) {
+        super();
         this._firstName = data.firstName;
         this._lastName = data.lastName;
         this._birthdate = data.birthdate;

@@ -4,7 +4,7 @@ class MemberListHeader extends Component {
 
     getMemberTableHeaders = () => {
         
-        let headerLabels = [
+        return [
             'First Name',
             'Last Name',
             'Birthday',
@@ -12,9 +12,7 @@ class MemberListHeader extends Component {
             'Contact Number',
             'Status',
             'Actions',
-        ];
-
-        return headerLabels.map((theader, key)=>  <th key={key}>{theader}</th>);
+        ].map((theader, key)=>  <th key={key}>{theader}</th>);
     }
     
 

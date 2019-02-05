@@ -10,7 +10,11 @@ class MemberList extends Component {
     memberRows = () => {
         let rows = [];
         for (var i = 0; i <10; i++) {
-            rows.push(<MemberListRow key={i}></MemberListRow>);
+            rows.push(
+                <MemberListRow 
+                    member={{id:i}} 
+                    key={i}></MemberListRow>
+            );
         }
         return rows;
     }
