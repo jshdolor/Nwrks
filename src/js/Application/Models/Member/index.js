@@ -1,7 +1,7 @@
 export default class Member {
 
     constructor(data = {}) {
-        this._firstName = data.firstName;
+        this._firstName = data.first_name;
         this._lastName = data.lastName;
         this._birthdate = data.birthdate;
         this._dateHired = data.dateHired;

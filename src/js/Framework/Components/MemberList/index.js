@@ -4,19 +4,34 @@ import MemberListRow from './MemberListRow';
 import MemberListHeader from './MemberListHeader';
 
 import {Table} from  '../../Plugins/BootstrapReact';
+
+import GetMembers from  '../../../Application/Services/Member/GetMembers';
 class MemberList extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            members: []
+        };
+    }
+
+    componentDidMount() {
+        GetMembers.handle()
+            .then(data => {
+                this.setState({
+                    members: data,
+                });
+            });
+    }
 
 
     memberRows = () => {
-        let rows = [];
-        for (var i = 0; i <10; i++) {
-            rows.push(
-                <MemberListRow 
-                    member={{id:i}} 
-                    key={i}></MemberListRow>
-            );
-        }
-        return rows;
+        // let rows = [];
+        return this.state.members.map((member, key) => {
+            return <MemberListRow 
+                    member={{id:2}} 
+                    key={key}></MemberListRow>;
+        });
     }
 
     render() {
