@@ -6,6 +6,7 @@ import FormField from '../Widgets/FormField';
 import Config from '../../../Application/Config';
 
 import AddMemberRequest from  '../../../Application/Services/Member/Request/AddMemberRequest';
+import AddMemberService from  '../../../Application/Services/Member/AddMember';
 
 class MemberForm extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ class MemberForm extends Component {
         
         request = new AddMemberRequest(formData);
 
-        console.log(request);
+        new AddMemberService().handle(request);
     }
 
 

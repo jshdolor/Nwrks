@@ -53,5 +53,13 @@ export default{
             placeholder: 'Interests',
             label: 'Interests'
         }
-    ]
+    ],
+    firebase: {
+        apiKey: "AIzaSyBZhdWeILQaQ3UfcEuLGTaJRhIsPw-kK5Y",
+        authDomain: "nwrks-e24df.firebaseapp.com",
+        databaseURL: "https://nwrks-e24df.firebaseio.com",
+        projectId: "nwrks-e24df",
+        storageBucket: "nwrks-e24df.appspot.com",
+        messagingSenderId: "883030705747"
+    }
 };
