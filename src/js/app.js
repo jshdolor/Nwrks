@@ -1,6 +1,5 @@
 import Boot from './Framework/Bootstrap';
 
-import '../scss/app.scss';
 
 /**
  * Make all global objects ready upon bootstrap
