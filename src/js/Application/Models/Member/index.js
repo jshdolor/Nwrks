@@ -62,6 +62,10 @@ export default class Member {
         return statusMap[this._status];
     }
 
+    get statusNumber() {
+        return this._status;
+    }
+
     set status(value) {
         this._status = value;
     }

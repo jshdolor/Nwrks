@@ -5,11 +5,12 @@ import {Link} from 'react-router-dom';
 class MemberListRow extends Component {
 
     render() {
-        let member = this.props.member;
+        let member = this.props.member, 
+            typeMemberClass = ['','text-danger', 'text-muted'];
         return (
             <tr>
-                <td>{member.firstName}</td>
-                <td>{member.lastName}</td>
+                <td className={typeMemberClass[member.statusNumber]}>{member.firstName}</td>
+                <td className={typeMemberClass[member.statusNumber]}>{member.lastName}</td>
                 <td>{member.birthdate}</td>
                 <td>{member.dateHired}</td>
                 <td>{member.contactNumber}</td>
