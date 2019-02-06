@@ -93,4 +93,8 @@ export default class Member {
     set interests(value) {
         this._interests = value;
     }
+
+    get displayName() {
+        return this.lastName + ', ' +  this.firstName;
+    }
 }

@@ -32,11 +32,12 @@ class ConfirmModal extends Component {
 
     deleteMember() {
       let request = new DeleteMemberRequest({id:this.props.id});
+
       DeleteMemberService.handle(request).then(() => {
-        console.log('deleted');
       }).finally(() => {
         this.props.hideConfirmModal();
       });
+      
     }
     render() {
         return (

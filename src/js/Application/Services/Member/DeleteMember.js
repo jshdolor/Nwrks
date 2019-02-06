@@ -7,7 +7,7 @@ class DeleteMember {
         return Firebase.db.collection('members')
             .doc(request.id)
             .delete()
-                .then(doc => {
+                .then(() => {
                     console.log("Document successfully deleted!");
                 })
                 .catch((e) => {

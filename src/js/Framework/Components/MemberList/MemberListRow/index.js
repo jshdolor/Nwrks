@@ -30,9 +30,9 @@ class MemberListRow extends Component {
                 <td>{member.contactNumber}</td>
                 <td>{member.status}</td>
                 <td>
-                    <Link to={'/members/'+member.id}><Button variant='info'>View</Button></Link>
+                    <Link to={'/member/'+member.id}><Button variant='info'>View</Button></Link>
                     <Button variant='danger' onClick={this.showDeleteDialog}>Delete</Button>
-                    <Link to={'/members/edit/'+member.id}><Button variant='warning'>Edit</Button></Link>
+                    <Link to={'/member/edit/'+member.id}><Button variant='warning'>Edit</Button></Link>
                 </td>
             </tr>
         );

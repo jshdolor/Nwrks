@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux'
 import confirmModalReducer from '../confirmModalReducer'
+import memberReducer from '../memberReducer'
 
 export default combineReducers({
-    confirmModal: confirmModalReducer
+    confirmModal: confirmModalReducer,
+    //to minimize calls
+    member:memberReducer
 });
 
