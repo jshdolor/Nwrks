@@ -20,6 +20,12 @@ export default{
         },
         {
             as: '',
+            name: 'birthdate',
+            placeholder: 'Birth Date',
+            label: 'Birth Date'
+        },
+        {
+            as: '',
             name: 'dateHired',
             placeholder: 'Date Hired',
             label: 'Date Hired'

@@ -8,12 +8,12 @@ class MemberListRow extends Component {
         let member = this.props.member;
         return (
             <tr>
-                <td>{member.first_name}</td>
-                <td>{member.first_name}</td>
-                <td>{member.first_name}</td>
-                <td>{member.first_name}</td>
-                <td>{member.first_name}</td>
-                <td>{member.first_name}</td>
+                <td>{member.firstName}</td>
+                <td>{member.lastName}</td>
+                <td>{member.birthdate}</td>
+                <td>{member.dateHired}</td>
+                <td>{member.contactNumber}</td>
+                <td>{member.status}</td>
                 <td>
                     <Link to={'/members/'+member.id}><Button variant='info'>View</Button></Link>
                     <Link to={'/members/:id'}><Button variant='danger'>Delete</Button></Link>

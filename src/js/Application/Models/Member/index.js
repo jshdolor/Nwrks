@@ -1,7 +1,7 @@
 export default class Member {
 
-    constructor(data = {}) {
-        this._firstName = data.first_name;
+    constructor(data = {}, id) {
+        this._firstName = data.firstName;
         this._lastName = data.lastName;
         this._birthdate = data.birthdate;
         this._dateHired = data.dateHired;
@@ -10,6 +10,11 @@ export default class Member {
         this._address = data.address;
         this._favFood = data.favFood;
         this._interests = data.interests;
+        this._id = id;
+    }
+
+    get id() {
+        return this._id;
     }
 
     get firstName() {
@@ -53,7 +58,8 @@ export default class Member {
     }
 
     get status() {
-        return this._status;
+        let statusMap = ['Active', 'On Leave', 'Resigned'];
+        return statusMap[this._status];
     }
 
     set status(value) {

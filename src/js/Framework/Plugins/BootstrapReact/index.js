@@ -5,5 +5,7 @@ export {
     Form,
     Container,
     Row,
-    Col
+    Col,
+    Nav,
+    Navbar
 } from 'react-bootstrap';

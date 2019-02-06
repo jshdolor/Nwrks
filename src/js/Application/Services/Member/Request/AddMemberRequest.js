@@ -1,6 +1,6 @@
-import ToFormData from '../../../../Infrastructure/FormData';
+import FirebaseObject from '../../../../Infrastructure/FirebaseObject';
 
-export default class AddMemberRequest extends ToFormData{
+export default class AddMemberRequest extends FirebaseObject{
     
     constructor(data = {}) {
         super();
