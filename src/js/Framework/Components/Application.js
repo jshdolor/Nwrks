@@ -3,10 +3,16 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import ModuleRoutes from '../RouteList';
 import {Container} from '../Plugins/BootstrapReact'
 
+import { connect } from 'react-redux';
+
+import ConfirmModal from './Widgets/ConfirmModal';
+
 class Application extends Component {
 
     render() {
         return (
+          <>
+          <ConfirmModal />
           <Router>
             <>
               <Container>
@@ -21,9 +27,14 @@ class Application extends Component {
               </Container>
             </>
           </Router>
+          </>
         );
       }
 
 }
 
-export default Application;
+const mapStateToProps = function(state){
+  return state.confirmModal;
+}
+
+export default connect(mapStateToProps)(Application);

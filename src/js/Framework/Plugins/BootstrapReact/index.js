@@ -7,5 +7,6 @@ export {
     Row,
     Col,
     Nav,
-    Navbar
+    Navbar,
+    Modal
 } from 'react-bootstrap';

@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import App from '../Components/Application';
 
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import rootReducer from '../Store/reducers';
+
+
 class Bootstrap extends Component {
 
     init() {
@@ -8,8 +13,12 @@ class Bootstrap extends Component {
     }
 
     render() {
+        const store = createStore(rootReducer);
+        
         return (
-          <App></App>
+            <Provider store={store}>
+                <App></App>
+            </Provider>
         );
       }
 
