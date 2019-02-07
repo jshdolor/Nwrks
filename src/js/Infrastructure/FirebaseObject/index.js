@@ -1,6 +1,6 @@
 export default class RequestObject {
 
-    getObject() {
+    getObject(excluded) {
 
         let keys = Object.keys(this),
             obj = {},
@@ -11,6 +11,10 @@ export default class RequestObject {
             keys.forEach((namespace) => {
 
                 trueKey = namespace.startsWith('_') > -1 ? namespace.substr(1) : namespace;
+                if((excluded || []).indexOf(trueKey) > -1)
+                {
+                    return true;
+                }
                 obj[trueKey] = this[namespace] ? this[namespace] : '';
 
             });

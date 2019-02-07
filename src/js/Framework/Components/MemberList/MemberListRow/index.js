@@ -32,7 +32,7 @@ class MemberListRow extends Component {
                 <td>
                     <Link to={'/member/'+member.id}><Button variant='info'>View</Button></Link>
                     <Button variant='danger' onClick={this.showDeleteDialog}>Delete</Button>
-                    <Link to={'/member/edit/'+member.id}><Button variant='warning'>Edit</Button></Link>
+                    <Link to={'/member/'+member.id+'/edit'}><Button variant='warning'>Edit</Button></Link>
                 </td>
             </tr>
         );

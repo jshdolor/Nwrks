@@ -1,12 +1,12 @@
 import Firebase from  '../../../Infrastructure/Client/Firebase';
 
-class AddMember {
+class EditMember {
     
     static handle(request={}) {
 
         return Firebase.db.collection('members')
-            .doc()
-            .set(request.getObject())
+            .doc(request.id)
+            .set(request.getObject(['id']))
                 .then(doc => {
                     return true;
                 })
@@ -18,5 +18,5 @@ class AddMember {
    
 }
 
-export default AddMember;
+export default EditMember;
 
