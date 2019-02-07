@@ -9,6 +9,9 @@ import ConfirmModalActions from '../../../Store/confirmModalReducer/actions';
 import GetSpecificMemberRequest from '../../../../Application/Services/Member/Request/GetSpecificMemberRequest';
 import GetSpecificMemberService from '../../../../Application/Services/Member/GetSpecificMember';
 import {Col,Row, Button} from  '../../../Plugins/BootstrapReact';
+import {Link} from 'react-router-dom';
+
+
 
 class ViewMemberModule extends Component {
 
@@ -52,7 +55,7 @@ class ViewMemberModule extends Component {
             <section>
             <h1>{this.state.memberDetails.displayName}</h1>
             <Button variant={'danger'} onClick={this.showDeleteDialog} >Delete</Button>
-            <Button variant={'warning'}>Edit</Button>
+            <Link to={'/member/' + this.state.memberDetails.id + '/edit'}><Button variant={'warning'}>Edit</Button></Link>
             {this.getFields()}
             </section>
 
