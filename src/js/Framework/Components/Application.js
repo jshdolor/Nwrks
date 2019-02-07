@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import ModuleRoutes from '../RouteList';
 import {Container} from '../Plugins/BootstrapReact'
-
 import { connect } from 'react-redux';
 
 import ConfirmModal from './Widgets/ConfirmModal';
+import Header from './Header';
 
 class Application extends Component {
 
@@ -15,6 +15,7 @@ class Application extends Component {
           <ConfirmModal />
           <Router>
             <>
+              <Header />
               <Container>
               {ModuleRoutes.map((route) => (
                 <Route
