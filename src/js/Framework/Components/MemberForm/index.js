@@ -44,6 +44,7 @@ class MemberForm extends Component {
                 if(refField) {
                     fieldName = fieldMap[field.name] ? fieldMap[field.name] : field.name;
                     refField.fieldData.value = this.props.member[fieldName];
+                    this.refs[field.name].validatorRun();
                 }
             })
 
@@ -55,18 +56,31 @@ class MemberForm extends Component {
 
     resetForm() {
         this.refs.form.reset();
+        this.refs.form.className = this.refs.form.className.replace('submitted','');
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        let formData = {}, ref=null, request=null;
+
+        this.refs.form.classList = 'submitted';
+
+        let formData = {}, ref=null, request=null, stopSubmit = false;
         for(ref in this.refs) {
             if(this.refs[ref].refs) {
                 formData[ref] = this.refs[ref].refs.fieldData.value;
+                if(!this.refs[ref].state.isValid)  {
+                    stopSubmit = true;
+                    break;
+                }
             }
         }
 
+        //prevent submitting if not valid
+        if(stopSubmit)
+            return ;
+
         request = this.props.member ? new EditMemberRequest(formData, this.props.member.id ): new AddMemberRequest(formData);
+
         this.validationSuccess(request);
     }
 
@@ -89,6 +103,17 @@ class MemberForm extends Component {
                 if(!this.props.member) {
                     this.resetForm();
                 }
+
+
+                let ref = null;
+                for(ref in this.refs) {
+                    if(this.refs[ref].refs) {
+                        // console.log(this.refs[ref]);
+                        this.refs[ref].resetField();
+                        this.refs[ref].validatorRun();
+                    }
+                }
+
                 this.setState({
                     showMessage:successMessage
                 })
@@ -118,7 +143,7 @@ class MemberForm extends Component {
 
         return groupedFields.map((group, key) => {
             return <Row key={key}>
-                        {group.map((field, fkey) => <Col key={fkey}><FormField ref={field.name}  field={field}></FormField></Col>)}
+                        {group.map((field, fkey) => <Col key={fkey}><FormField ref={field.name} field={field}></FormField></Col>)}
                 </Row>;
         });
     };
